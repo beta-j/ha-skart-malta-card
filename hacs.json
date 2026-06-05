@@ -1,5 +1,6 @@
 {
   "name": "Skart Malta Card",
+  "country":["MT"],
   "render_readme": true,
   "filename": "skart-malta-card.js"
 }
