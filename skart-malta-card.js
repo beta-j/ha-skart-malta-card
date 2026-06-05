@@ -37,7 +37,7 @@ const STREAM_LABELS = {
     organic: { label: "Organiku", sub: "Borża Bajda" },
     mixed: { label: "Imħallat", sub: "Borża Sewda" },
     recyclable: { label: "Riċiklabbli", sub: "Borża Griża" },
-    glass: { label: "Ħġieġ", sub: "" },
+    glass: { label: "Ħġieġ", sub: "Flixkien u Vażetti" },
     none: { label: "Xejn", sub: "Ma jinġabarx skart illum" },
   },
 };
