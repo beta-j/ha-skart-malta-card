@@ -24,8 +24,10 @@ Add the card to a dashboard (Edit dashboard → Add card → Manual / or pick "S
 ```yaml
 type: custom:skart-malta-card
 entity: sensor.skart_malta_today
+tomorrow_entity: sensor.skart_malta_tomorrow
 title: Skart illum
 language: en
+rollover_hours: 3
 show_date: true
 colors:
   organic: "#4a7c2f"
@@ -36,13 +38,27 @@ colors:
 
 ### Options
 
-| Option      | Type    | Default            | Description                                            |
-|-------------|---------|--------------------|--------------------------------------------------------|
-| `entity`    | string  | *(required)*       | A Skart Malta day sensor, e.g. `sensor.skart_malta_today` or `sensor.skart_malta_tomorrow`. |
-| `title`     | string  | `Waste collection` | Card heading.                                          |
-| `language`  | string  | `en`               | Display language for the waste labels: `en` (English) or `mt` (Maltese). |
-| `show_date` | boolean | `true`             | Show the date for the selected day.                    |
-| `colors`    | map     | built-in palette   | Per-stream colour overrides (`organic`, `mixed`, `recyclable`, `glass`). All keys optional. |
+| Option            | Type    | Default            | Description                                            |
+|-------------------|---------|--------------------|--------------------------------------------------------|
+| `entity`          | string  | *(required)*       | The Skart Malta **today** sensor, e.g. `sensor.skart_malta_today`. |
+| `tomorrow_entity` | string  | *(none)*           | The Skart Malta **tomorrow** sensor. When set, enables roll-over (see below). |
+| `title`           | string  | `Waste collection` | Card heading shown while displaying today's collection. |
+| `language`        | string  | `en`               | Display language for the waste labels: `en` (English) or `mt` (Maltese). |
+| `rollover_hours`  | number  | `3`                | Hours after the collection time before the card switches to tomorrow. |
+| `show_date`       | boolean | `true`             | Show the date for the selected day.                    |
+| `colors`          | map     | built-in palette   | Per-stream colour overrides (`organic`, `mixed`, `recyclable`, `glass`). All keys optional. |
+
+### Roll-over to tomorrow
+
+If `tomorrow_entity` is set, the card shows **today's** collection from midnight
+until `rollover_hours` after the collection time (read from the integration's
+`collection_time` attribute), then automatically switches to **tomorrow's**
+collection for the rest of the day. For example, with a 07:30 collection time and
+the default 3-hour window, the card shows today until 10:30, then tomorrow.
+
+When showing tomorrow, the heading is replaced with **"Collection tomorrow"**
+(English) or **"Skart li jinġabar għada"** (Maltese). If `tomorrow_entity` is not
+set, or the collection time can't be read, the card simply always shows today.
 
 The `language` option only changes the **display** labels on the card; the underlying sensor states stay language-neutral so automations and history are unaffected. Labels render as:
 
