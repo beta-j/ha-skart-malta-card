@@ -1,4 +1,8 @@
 # <img src="icon.png" width="32" align="top"> Skart Malta Card
+[![License](https://img.shields.io/github/license/beta-j/ha-skart-malta-card)](LICENSE)
+[![HACS](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
+[![Release](https://img.shields.io/github/v/release/beta-j/ha-skart-malta-card)](https://github.com/beta-j/ha-skart-malta-card/releases)
+
 
 A minimal, customisable Lovelace card for displaying Malta's daily waste collection in Home Assistant.
 
