@@ -4,6 +4,11 @@
 [![Release](https://img.shields.io/github/v/release/beta-j/ha-skart-malta-card)](https://github.com/beta-j/ha-skart-malta-card/releases)
 
 
+
+⚠️ This card is now bundled with the [Skart Malta integration]([url](https://github.com/beta-j/ha-skart-malta)) and installed automatically. This standalone repo is no longer maintained.
+
+-----------------------------------------------------------------------
+
 A minimal, customisable Lovelace card for displaying Malta's daily waste collection in Home Assistant.
 
 > **Skart** is Maltese for *waste / rubbish*.
